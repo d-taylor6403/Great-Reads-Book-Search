@@ -1,0 +1,41 @@
+body {
+    overflow-x: hidden;
+    height: 100%;
+    }
+    .results {
+        padding-top: 20px;
+        background: rgb(26,177,170);
+        height: 100%;
+    }
+    .result-box{
+        background: #f9f5da
+    }
+    p {
+        float: left;
+        text-align: left;
+    }
+    .title, .authors {
+        margin-left: 10px;
+    }
+    .buttonDiv {
+        margin-right: 20px;
+        float: right;
+    }
+    .title {
+        margin-bottom: 0px;
+        font-weight: bold;
+    }
+    .results h1 {
+        color: white;
+    }
+    .view {
+        background: navy;
+        color: white;
+        margin-right: 10px;
+    }
+    .save {
+        color: white;
+    }
+    .description{
+        margin-right: 20px
+    }
