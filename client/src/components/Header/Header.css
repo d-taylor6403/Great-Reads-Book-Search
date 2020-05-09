@@ -1,0 +1,35 @@
+.header {
+    background: url("headerImage.jpeg") no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: right;
+    height: 100vh;
+    color: rgb(254,220,61);
+    text-shadow: 1px 1px black;
+    padding-top: 25vh;
+}
+.header h1 {
+    font-size: 64px;
+    font-family: 'Oleo Script', cursive;
+}
+.header h2 {
+    font-size: 30px;
+    font-family: 'Oleo Script', cursive;
+}
+.header h3 {
+    font-size: 50px;
+    font-family: 'Oleo Script', cursive;
+}
+.btn {
+    background: rgb(26,177,170);
+    height: 35px;
+}
+input {
+    height: 35px;
+}
+form {
+    width: 35vw;
+    margin: 40px auto;
+}

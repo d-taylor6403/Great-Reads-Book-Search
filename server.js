@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //Connect to MongoDB
-var MONGODB_URI = proces.env.MONGODB_URI || "mongodb://localhost/googlebooks";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, (err) => {
   if (err) throw err;
   console.log("database connected")
