@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import "../assets/results.css"
 import API from "../utils/API"
 
