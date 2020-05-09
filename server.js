@@ -16,7 +16,7 @@ app.use(express.static("public"));
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("client/public"));
 }
 
 //Connect to MongoDB
@@ -29,16 +29,64 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, (err) => {
   .catch(err => console.log(err));
 
 // Define API routes here
-
-
-
-
+//search route
+app.get("/search/:search", (req, res) => {
+  let search = req.params.search;
+  axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search).then(function (response) {
+    let books = response.data.items
+    // console.log(books)
+    let array = [];
+    for (let i = 0; i < books.length; i++) {
+      if (books[i].volumeInfo.imageLinks !== undefined && books[i].volumeInfo.authors !== undefined) {
+        let bookInfo = {
+          title: books[i].volumeInfo.title,
+          authors: books[i].volumeInfo.authors,
+          description: books[i].volumeInfo.description,
+          image: books[i].volumeInfo.imageLinks.smallThumbnail,
+          link: books[i].volumeInfo.infoLink
+        }
+        array.push(bookInfo);
+      }
+    }
+    db.Book
+      .create(array)
+      .then(dbBook => res.json(dbBook))
+      .catch(err => res.json(err))
+  })
+})
+//get all saved books from db
+app.get("/api/books", (req, res) => {
+  db.Book
+    .find({ saved: true })
+    .then(dbBook => res.json(dbBook))
+    .catch(err => res.json(err))
+})
+//save a book to db
+app.post("/api/books/:id", (req, res) => {
+  db.Book
+    .findOneAndUpdate({ _id: req.params.id }, { saved: true }, { new: true })
+    .then(dbBook => {
+      res.json(dbBook)
+    })
+})
+//delete all unsaved books from db
+app.delete("/api/books", (req, res) => {
+  db.Book
+    .deleteMany({ saved: false })
+    .then(dbBooks => res.json(dbBooks))
+})
+//delete a book from db /api/books/:id
+app.delete("/api/books/:id", (req, res) => {
+  db.Book
+    .deleteOne({ _id: req.params.id })
+    .then(dbBook => res.json(dbBook))
+})
 
 
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 
 app.listen(PORT, () => {

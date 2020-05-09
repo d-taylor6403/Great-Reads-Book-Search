@@ -1,6 +1,6 @@
 import React from "react";
-import "Results.css";
-import API from "../utils/API";
+import "../Results/Results.css";
+import API from "../../utils/API";
 
 class Results extends React.Component {
     handleSave = (id) => {

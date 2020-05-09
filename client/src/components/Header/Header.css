@@ -6,21 +6,20 @@
         background-size: cover;
         background-position: right;
     height: 100vh;
-    color: rgb(254,220,61);
+    color: rgb(26,177,170);
     text-shadow: 1px 1px black;
     padding-top: 25vh;
+    
 }
 .header h1 {
-    font-size: 64px;
-    font-family: 'Oleo Script', cursive;
+    font-size: 80px;
+    font-family: 'Caveat', cursive;
+    background-color: white;
 }
 .header h2 {
-    font-size: 30px;
-    font-family: 'Oleo Script', cursive;
-}
-.header h3 {
-    font-size: 50px;
-    font-family: 'Oleo Script', cursive;
+    font-size: 60px;
+    font-family: 'Caveat', cursive;
+    background-color: white;
 }
 .btn {
     background: rgb(26,177,170);

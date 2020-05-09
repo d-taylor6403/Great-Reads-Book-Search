@@ -1,5 +1,5 @@
 import React from "react";
-import "./header.css"
+import "../Header/Header.css"
 
 class Header extends React.Component {
     handleSubmit = (event) => {
@@ -10,9 +10,11 @@ class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                <h1>Great Reads</h1>
-                <h2>The Journey of a Lifetime starts with the turning of a page. - Rachel Anders</h2>
-                <h3>Search for and Save Books of Interest</h3>
+                <h1>Great Reads <br></br>
+                "The Journey of a Lifetime starts with the <br></br>turning of a page." - Rachel Anders</h1>
+                <br></br>
+
+                <h2>Enter the name of a book of interest below</h2>
                 <form>
                     <div className="input-group">
                         <input className="form-control" type="text" placeholder="Find A Book" value={this.props.search} onChange={this.props.updateInput}></input>
