@@ -4,30 +4,26 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
-const axios = require("axios");
-
-//define models
+const axios = require("axios")
+//require models
 const db = require("./models");
-
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/public"));
 }
-
 //Connect to MongoDB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, (err) => {
-  if (err) throw err;
-  console.log("database connected")
-})
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/book";
+mongoose
+  .connect(MONGODB_URI, { useNewUrlParser: true }, (err) => {
+    if (err) throw err;
+    console.log("database connected")
+  })
   .then(() => console.log("Database Connected!"))
   .catch(err => console.log(err));
-
 // Define API routes here
 //search route
 app.get("/search/:search", (req, res) => {
@@ -51,8 +47,9 @@ app.get("/search/:search", (req, res) => {
     db.Book
       .create(array)
       .then(dbBook => res.json(dbBook))
-      .catch(err => res.json(err))
-  })
+
+
+  }).catch(err => res.json(err))
 })
 //get all saved books from db
 app.get("/api/books", (req, res) => {
@@ -81,7 +78,6 @@ app.delete("/api/books/:id", (req, res) => {
     .deleteOne({ _id: req.params.id })
     .then(dbBook => res.json(dbBook))
 })
-
 
 // Send every other request to the React app
 // Define any API routes before this runs
