@@ -1,5 +1,5 @@
 import React from "react";
-import "SavedHeader.css";
+import "../assets/savedHeader.css";
 
 class SavedHeader extends React.Component {
     render() {

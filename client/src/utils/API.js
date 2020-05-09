@@ -1,24 +1,19 @@
 import axios from "axios";
 
+const baseURL = 'https://www.googleapis.com/books/v1/volumes?q=';
+const API_KEY = '&download=epub&key=AIzaSyC8d9hBMhXLvdMYCYWOFgOJC9wuj7cMd9I';
+
 export default {
-    //get books from the database
-    getAllBooks: function () {
-        return axios.get("/api/books")
+    search: function (query) {
+        return axios.get(baseURL + query + API_KEY);
     },
-    //save a book to the database
-    saveBook: function (id) {
-        return axios.post(`/api/books/${id}`)
+    getBooks: function () {
+        return axios.get('/api/books');
     },
-    //search google books
-    searchBooks: function (search) {
-        return axios.get(`/search/${search}`)
+    saveBook: function (bookData) {
+        return axios.post('/api/books', bookData);
     },
-    //delete all unsaved book
-    deleteAllUnsaved: function () {
-        return axios.delete("/api/books")
-    },
-    //delete one book
     deleteBook: function (id) {
-        return axios.delete(`/api/books/${id}`)
-    }
-}
+        return axios.delete('/api/books/' + id);
+    },
+};

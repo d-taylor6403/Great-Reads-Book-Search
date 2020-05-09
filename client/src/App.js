@@ -5,8 +5,9 @@ import {
     Route,
     Switch
 } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import Search from "./pages/Search";
+import Saved from "./pages/Saved"
 
 
 class App extends React.Component {
@@ -17,7 +18,7 @@ class App extends React.Component {
                     <Navbar />
                     <Switch>
                         <Route exact path="/" component={Search} />
-
+                        <Route exact path="/saved" component={Saved} />
                     </Switch>
                 </div>
             </Router>
