@@ -1,4 +1,7 @@
 import React from "react";
+import SavedHeader from "../components/SavedHeader/SavedHeader";
+import Results from "../components/Results/Results";
+import API from "../utils/API";
 
 
 
