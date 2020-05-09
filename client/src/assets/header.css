@@ -1,5 +1,5 @@
 .header {
-    background: url("headerImage.jpeg") no-repeat;
+    background: url("./headerImg.jpg") no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;

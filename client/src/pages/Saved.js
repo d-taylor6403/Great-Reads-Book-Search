@@ -1,14 +1,12 @@
 import React from "react";
-import SavedHeader from "../components/SavedHeader";
-import Results from "../components/Results";
-import API from "../utils/API";
-
-
+import SavedHeader from "../components/SavedHeader"
+import Results from "../components/Results"
+import API from "../utils/API"
 
 class Saved extends React.Component {
     state = {
         saved: [],
-        btnColor: { background: '#4484CE' }
+        btnColor: { background: 'red' }
     }
     componentDidMount() {
         this.getSaved()
@@ -16,7 +14,7 @@ class Saved extends React.Component {
     getSaved = () => {
         API.getAllBooks()
             .then(res => {
-                this.setState({ saved: res.date })
+                this.setState({ saved: res.data })
             })
     }
     render() {
@@ -33,7 +31,6 @@ class Saved extends React.Component {
             </div>
         )
     }
-
 }
 
 export default Saved

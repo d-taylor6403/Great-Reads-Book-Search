@@ -1,14 +1,13 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
 import {
     BrowserRouter as Router,
     Route,
     Switch
 } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from './components/Navbar';
 import Search from "./pages/Search";
 import Saved from "./pages/Saved"
-
 
 class App extends React.Component {
     render() {
@@ -25,5 +24,4 @@ class App extends React.Component {
         );
     }
 }
-
 export default App;
