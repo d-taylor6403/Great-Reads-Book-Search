@@ -7,7 +7,7 @@
         background-position: right;
     height: 75vh;
     color: rgb(26,177,170);
-    text-shadow: 1px 1px black;
+    
     padding-top: 25vh;
     
 }
@@ -19,6 +19,9 @@
 .header h2 {
     font-size: 60px;
     font-family: 'Caveat', cursive;
+    background-color: white;
+}
+.header h3 {
     background-color: white;
 }
 .btn {
