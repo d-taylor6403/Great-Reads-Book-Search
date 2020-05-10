@@ -20,9 +20,13 @@
     font-size: 60px;
     font-family: 'Caveat', cursive;
     background-color: white;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }
 .header h3 {
     background-color: white;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }
 .btn {
     background: rgb(26,177,170);

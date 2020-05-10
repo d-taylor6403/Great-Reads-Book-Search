@@ -13,7 +13,7 @@ class Header extends React.Component {
                 <h2>"Reading Gives Us Someplace to go when we have to stay where we are" --Mason Cooley</h2>
                 <br></br>
                 <br></br>
-                <h3>To Use the Greate Reads Book Search: <br></br>1. Enter the title of a book to return the details from Google Books.<br></br> 2. Click the view button to purchase a copy. <br></br>3. Click the save button to save to your personal list</h3>
+                <h3>To Use the Greate Reads Book Search: <br></br>1. Enter the title of a book to return the details from Google Books.<br></br> 2. Click the view button to purchase a digital copy. <br></br>3. Click the save button to save to your personal list</h3>
                 <form>
                     <div className="input-group">
                         <input className="form-control" type="text" placeholder="Find a Book" value={this.props.search} onChange={this.props.updateInput}></input>
