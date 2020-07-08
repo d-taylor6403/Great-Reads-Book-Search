@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 //Connect to MongoDB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:cakepop143@ds153719.mlab.com:53719/heroku_jrs6qzm0";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/book";
 mongoose
   .connect(MONGODB_URI, {useNewUrlParser: true}, (err) => {
     if (err) throw err;
