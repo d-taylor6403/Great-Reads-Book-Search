@@ -4,7 +4,7 @@ A React-based application that allows the user to interact with the Google Book 
 ## Overview:
 The goal of this assignment was to demonstrate MERN stack development knowledge including the use of Express, React and Mongoose.
 
-This app was deployed on Heroku and can be viewed [here](https://greatereadsbooksearch.herokuapp.com/)
+This app was deployed on Heroku and can be viewed [here](https://greatreadsbooksearch.herokuapp.com)
 
 ### Demo
 
@@ -24,7 +24,7 @@ This app was deployed on Heroku and can be viewed [here](https://greatereadsbook
 
 3. After both installations are complete, run the following command in your terminal: npm start
 
-4. Your app should run on http://localhost:3000. 
+4. Your app should run on http://localhost:3001. 
 
 5. Enter any book title in search box and click the search button. Books matching the title will be displayed below the search form.
 
